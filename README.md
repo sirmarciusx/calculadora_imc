@@ -154,4 +154,4 @@ Certifique-se de que os nomes dos arquivos na pasta `images/` correspondem exata
 - Para atletas ou perfis específicos, a interpretação pode variar.
 
 ## 🧾 Direitos Autorais
-© <span id="ano-readme">(ano atual)</span> **Márcio Gusmão**. Todos os direitos reservados.
+© <span id="ano-readme">(2025)</span> **Márcio Gusmão**. Todos os direitos reservados.
