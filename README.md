@@ -2,6 +2,8 @@
 
 Uma aplicação web simples e moderna para cálculo do **Índice de Massa Corporal (IMC)**, com interface responsiva, modo claro/escuro, modal de resultado animado e visual refinado (glassmorphism + neon).
 
+Site: https://sirmarciusx.github.io/calculadora_imc/
+
 ## 🚀 Visão Geral
 Digite peso (kg) e altura (m) e obtenha imediatamente o valor do IMC, a faixa correspondente e uma imagem ilustrativa. O modal de resultado tem animação suave e pode ser fechado por:
 - Botão "Fechar"
