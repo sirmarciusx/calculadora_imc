@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="top-bar">
+        <h1 class="app-title">Calculadora de IMC</h1>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema" title="Alternar tema">🌙</button>
+    </header>
+
+    <main class="calculator-container glass">
+        <h2 class="section-title">Saúde & Bem-estar</h2>
+        <p class="subtitle">Descubra sua faixa de IMC e visualize rapidamente a classificação.</p>
+        <form id="imc-form" novalidate>
+            <div class="input-group">
+                <label for="weight">Peso (kg)</label>
+                <input type="number" id="weight" inputmode="decimal" step="0.1" placeholder="Ex: 70.5" required>
+                <span class="field-hint">Use ponto ou vírgula como separador decimal</span>
+            </div>
+            <div class="input-group">
+                <label for="height">Altura (m)</label>
+                <input type="number" id="height" inputmode="decimal" step="0.01" placeholder="Ex: 1.75" required>
+            </div>
+            <button type="submit" class="primary-btn full-width">Calcular IMC</button>
+        </form>
+        <ul class="legend">
+            <li><span class="legend-dot cor-magro"></span>Abaixo do peso</li>
+            <li><span class="legend-dot cor-normal"></span>Peso normal</li>
+            <li><span class="legend-dot cor-sobrepeso"></span>Sobrepeso</li>
+            <li><span class="legend-dot cor-ob1"></span>Obesidade I</li>
+            <li><span class="legend-dot cor-ob2"></span>Obesidade II</li>
+            <li><span class="legend-dot cor-ob3"></span>Obesidade III</li>
+        </ul>
+        <footer class="app-footer">Classificação baseada em parâmetros OMS</footer>
+    </main>
+
+        <div id="result-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            
+            <div class="result-content"> 
+                <div class="text-results">
+                    <h2 id="imc-value"></h2>
+                    <p id="imc-category"></p>
+                </div>
+                <img id="result-image" src="" alt="Resultado IMC">
+            </div>
+                        <div class="modal-actions">
+                                <button class="secondary-btn" id="close-modal-btn" type="button">Fechar</button>
+                        </div>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+        <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const themeToggle = document.getElementById('theme-toggle');
+                    const stored = localStorage.getItem('imc-theme');
+                    if (stored === 'dark') document.documentElement.classList.add('dark');
+                    updateThemeIcon();
+                    themeToggle.addEventListener('click', () => {
+                        document.documentElement.classList.toggle('dark');
+                        localStorage.setItem('imc-theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+                        updateThemeIcon();
+                    });
+                    function updateThemeIcon(){
+                        themeToggle.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
+                    }
+                });
+        </script>
+    <footer class="site-copyright" id="site-copyright">
+        &copy; <span id="year-copy"></span> Márcio Gusmão. Todos os direitos reservados.
+    </footer>
+</body>
+</html>
